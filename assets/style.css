@@ -1,5 +1,6 @@
 html {
   box-sizing: border-box;
+  margin:0;
 }
 
 *,
@@ -17,61 +18,76 @@ body {
 }
 
 nav {
-  position: relative;
+  position: sticky;
   width: 100%;
-  padding:2em;
+  top:0;
+  padding:1rem;
   background: #F2F2F2;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.container {
-  position: relative;
-  overflow: hidden;
-  font-size: 1.8em;
-  padding: 50px;
-  margin: 0 auto;
-  max-width: 1280px;
-  word-wrap: break-word;
-  height:82vh;
-}
-
-img{
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius:3px;
-  position: relative;
-  object-fit: cover;
-  height:100%;
-  width:100%;
-  animation: fadein both 3s;
-}
-
-@keyframes fadein {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
-
-.column {
-  display: block;
-  flex-basis: 0;
-  flex-grow: 1;
-  flex-shrink: 1;
-  padding: .75rem;
+  z-index:2;
+  margin-bottom:40px;
 }
 
 .footer {
-  display: flex;
+  display:flex;
   justify-content: center;
-  align-items: center;
-  padding-bottom:4em;
+  position: sticky;
+  bottom:0;
+  width:100%;
+  padding-top:40px;
+  padding:1rem;
+  background:#fff;
+  z-index:2;
 }
 
 .signature {
   font-size: 1.8em;
   letter-spacing: 0.5em;
   color: #BDBDBD;
+}
+
+.container {
+  display:block;
+  position: sticky;
+  overflow: hidden;
+  font-size: 1.8em;
+  padding:0 40px;
+  margin: 0 auto;
+  height:100%;
+  z-index:1;
+}
+.row{
+  display: flex ;
+  flex-wrap: 1 0 auto;
+  word-wrap: break-word;
+  /* margin:0 auto;
+  padding: 0 4px; */
+}
+
+.column {
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  padding: 0 5px;
+  width:200px;
+}
+
+.hero{
+  object-fit: cover;
+  height:100%;
+  width:100%;
+  max-height:540px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius:3px;
+  position: relative;
 }
 
 @media (max-width:768px){
@@ -91,5 +107,9 @@ img{
 
   .signature{
     font-size:1.4em;
+  }
+  .hero{
+    max-width:600px;
+    max-height:400px;
   }
 }
