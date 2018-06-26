@@ -19,11 +19,11 @@ body {
 
 .dropdown {
   position: fixed;
+  bottom: 0;
   width: 100%;
   margin: 0;
-  top: 0;
-  padding: 1rem;
-  background: #F2F2F2;
+  padding: 1rem 0;
+  background: #F2F2F2 url('icons/chevron-down.svg') no-repeat center;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   outline: 0;
   border: 0;
@@ -31,28 +31,57 @@ body {
   justify-content: center;
   align-items: center;
   z-index: 4;
-  transition: all .1s linear;
   cursor: pointer;
+  height: 6vh;
 }
 
-/* .dropdown:focus {
-  animation: slide 0.8s linear;
-  animation-timing-function: ease-in-out;
-  top: calc(100vh - 56px);
-  background: rgba(242, 242, 242, 0);
-  box-shadow:none;
+.follow {
+  color: #F2F2F2;
+  font-size: 4em;
+  text-align: center;
+  letter-spacing: 0.20em;
+  user-select: none;
 }
 
-@keyframes slide {
-  0% {
-    top: 0;
-    background: rgba(242, 242, 242, 1);
-  }
-  100% {
-    top: calc(100vh - 56px);
-    background: rgba(242, 242, 242, 0);
-  }
-} */
+.links {
+  height: auto;
+  text-align: center;
+  letter-spacing: 2em;
+  padding: 1em;
+}
+
+.overlay-container {
+  justify-content: center;
+  width: 100%;
+  padding: 120px;
+}
+
+.overlay {
+  display: flex;
+  z-index: 3;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.8);
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateY(-94vh);
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay.dropped {
+  transform: translateY(0%);
+}
+
+.overlay.dropped>.dropdown {
+  background: rgba(242, 242, 242, 0) url('icons/chevron-up.svg') no-repeat center;
+  box-shadow: none;
+}
+
+.active {
+  height: 100%;
+  overflow: hidden;
+}
 
 .footer {
   display: flex;
@@ -79,7 +108,7 @@ body {
   position: relative;
   overflow-x: hidden;
   font-size: 1.8em;
-  padding: 120px 60px;
+  padding: 120px;
   margin: 0 auto;
   height: 100%;
   z-index: 1;
@@ -92,11 +121,11 @@ body {
   flex-wrap: wrap;
 }
 
-.row >.column:last-child {
+.row>.column:last-child {
   padding-right: 0px;
 }
 
-.row >.column:first-child {
+.row>.column:first-child {
   padding-left: 0px;
 }
 
@@ -106,10 +135,9 @@ body {
   padding: 0 4px;
 }
 
-img {
+.img {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 3px;
-  cursor: pointer;
 }
 
 .column img {
@@ -126,6 +154,8 @@ img {
   position: relative;
 }
 
+/* MEDIA QUERIES */
+
 @media screen and (max-width: 991px) {
   .row>.column:nth-of-type(even) {
     padding-right: 0px;
@@ -137,25 +167,14 @@ img {
     font-size: 1.4em;
   }
   .container {
-    padding: 80px 40px;
+    padding: 80px;
+  }
+  .overlay-container{
+    padding: 80px;
   }
   .dropdown {
     padding: .75em;
   }
-  /* .dropdown:focus {
-    top: calc(100vh - 44px);
-  } */
-
-  /* @keyframes slide {
-    0% {
-      top: 0;
-      background: rgba(242, 242, 242, 1);
-    }
-    100% {
-      top: calc(100vh - 56px);
-      background: rgba(242, 242, 242, 0);
-    }
-  } */
 }
 
 @media screen and (max-width: 600px) {
@@ -169,31 +188,16 @@ img {
   .dropdown {
     padding: .6em;
   }
-  /* .dropdown:focus {
-    top: calc(100vh - 40px);
-    background: rgba(242, 242, 242, 0);
+  .container {
+    padding: 40px;
   }
-  @keyframes slide {
-    0% {
-      top: 0;
-      background: rgba(242, 242, 242, 1);
-    }
-    100% {
-      top: calc(100vh - 40px);
-      background: rgba(242, 242, 242, 0);
-    }
-  } */
-}
-
-/* overlay page */
-
-.overlay {
-  display: none;
-  z-index: 3;
-  position: fixed;
-  background-color: rgba(0, 0, 0, 0.8);
-  top: 0;
-  left: 0;
-  width: 100%;
-  min-height: 100%;
+  .overlay-container{
+    padding: 40px;
+  }
+  .follow{
+    font-size:3.5em;
+  }
+  .links{
+    transform:scale(0.9);
+  }
 }
