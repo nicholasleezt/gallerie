@@ -43,6 +43,7 @@ body {
   z-index: 4;
   cursor: pointer;
   height: 40px;
+  transition:all 0.7s ease-in-out;
 }
 
 .follow {
@@ -78,15 +79,18 @@ body {
   transform: translateY(calc(-100% + 40px));
   justify-content: center;
   align-items: center;
+  transition:all 0.7s ease-in-out;
 }
 
 .overlay.dropped {
   transform: translateY(0%);
+  transition:all 0.7s ease-in-out;
 }
 
 .overlay.dropped > .dropdown {
   background: rgba(242, 242, 242, 0) url('icons/chevron-up.svg') no-repeat center;
   box-shadow: none;
+  transition:all 0.7s ease-in-out;
 }
 
 .overlay.dropped > .overlay-container {
