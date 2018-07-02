@@ -9,6 +9,14 @@ html {
   box-sizing: inherit;
 }
 
+a {
+  text-decoration: none;
+}
+
+a:active {
+  outline: none;
+}
+
 body {
   font-family: 'Playfair Display', serif;
   font-size: 10px;
@@ -17,7 +25,7 @@ body {
   color: #333;
 }
 
-.container:after{
+.container:after {
   content: " ";
   position: absolute;
   top: 0;
@@ -43,7 +51,7 @@ body {
   z-index: 4;
   cursor: pointer;
   height: 40px;
-  transition:all 0.7s ease-in-out;
+  transition: all 0.7s ease-in-out;
 }
 
 .follow {
@@ -65,7 +73,7 @@ body {
   justify-content: center;
   width: 100%;
   padding: 120px;
-  visibility:hidden;
+  visibility: hidden;
 }
 
 .overlay {
@@ -79,21 +87,21 @@ body {
   transform: translateY(calc(-100% + 40px));
   justify-content: center;
   align-items: center;
-  transition:all 0.7s ease-in-out;
+  transition: all 0.7s ease-in-out;
 }
 
 .overlay.dropped {
   transform: translateY(0%);
-  transition:all 0.7s ease-in-out;
+  transition: all 0.7s ease-in-out;
 }
 
-.overlay.dropped > .dropdown {
+.overlay.dropped>.dropdown {
   background: rgba(242, 242, 242, 0) url('icons/chevron-up.svg') no-repeat center;
   box-shadow: none;
-  transition:all 0.7s ease-in-out;
+  transition: all 0.7s ease-in-out;
 }
 
-.overlay.dropped > .overlay-container {
+.overlay.dropped>.overlay-container {
   visibility: visible;
 }
 
@@ -176,10 +184,10 @@ body {
 /* MEDIA QUERIES */
 
 @media screen and (max-width: 991px) {
-  .row > .column:nth-of-type(even) {
+  .row>.column:nth-of-type(even) {
     padding-right: 0px;
   }
-  .row > .column:nth-of-type(odd) {
+  .row>.column:nth-of-type(odd) {
     padding-left: 0px;
   }
   .signature {
@@ -188,14 +196,14 @@ body {
   .container {
     padding: 100px 80px;
   }
-  .overlay-container{
+  .overlay-container {
     padding: 100px 80px;
   }
   .dropdown {
     padding: .75em;
   }
-  .follow{
-    font-size:3.5em;
+  .follow {
+    font-size: 3.5em;
   }
 }
 
@@ -213,11 +221,11 @@ body {
   .container {
     padding: 80px 60px
   }
-  .overlay-container{
+  .overlay-container {
     padding: 80px 60px
   }
-  .follow{
-    font-size:3em;
+  .follow {
+    font-size: 3em;
   }
   .links {
     height: auto;
@@ -225,7 +233,7 @@ body {
     letter-spacing: 0em;
     padding: 0em;
   }
-  .links > a > img {
-    transform:scale(0.8);
+  .links>a>img {
+    transform: scale(0.8);
   }
 }
