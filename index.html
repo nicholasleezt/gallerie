@@ -5,13 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="assets/style.css" rel="stylesheet" type="text/css">
+    <link href="assets/style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
     <link rel=icon href="assets/icons/favicon.png">
     <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous"></script>
-    <script src="assets/script.js"></script>
     <title>I am Nicholas Lee</title>
 </head>
 
@@ -20,14 +17,20 @@
         <div class="overlay-container">
             <div class="follow">follow me</div>
             <div class="links">
-                <a href="https://flic.kr/nicholasleezt" target="_blank" ><img src="assets/icons/flickr.svg"/></a>
-                <a href="https://bit.ly/2ly6TK5" target="_blank" ><img src="assets/icons/instagram.svg"/></a>
-                <a href="https://bit.ly/2Mqt9AW" target="_blank" ><img src="assets/icons/twitter.svg"/></a>
+                <a href="https://flic.kr/nicholasleezt" target="_blank">
+                    <img src="assets/icons/flickr.svg" />
+                </a>
+                <a href="https://bit.ly/2ly6TK5" target="_blank">
+                    <img src="assets/icons/instagram.svg" />
+                </a>
+                <a href="https://bit.ly/2Mqt9AW" target="_blank">
+                    <img src="assets/icons/twitter.svg" />
+                </a>
             </div>
         </div>
         <button class="dropdown" type="button"></button>
     </div>
-    <div class="container" >
+    <div class="container">
         <img class="hero img" src="assets/images/photo_7.jpg">
         <div class="row">
             <div class="column">
@@ -53,16 +56,7 @@
     <footer class="footer">
         <span class="signature">NICHOLAS LEE</span>
     </footer>
-    <script>
-        new ScrollReveal();
-        window.sr = ScrollReveal({
-            reset: true
-        });
-        sr.reveal('.img', {
-            duration: 500,
-            viewFactor: 0.5
-        });
-    </script>
+    <script src="assets/script.js"></script>
 </body>
 
 </html>
