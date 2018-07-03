@@ -17,6 +17,10 @@ a:active {
   outline: none;
 }
 
+button::-moz-focus-inner { /*remove FireFox dotted outline*/
+  border: 0;
+}
+
 body {
   font-family: 'Playfair Display', serif;
   font-size: 10px;
@@ -71,6 +75,7 @@ body {
   padding: 1em;
   vertical-align: middle;
   display: flex;
+  justify-content: space-around; /*Edge*/
   justify-content: space-evenly;
   max-width: 300px;
   margin: auto;
@@ -225,6 +230,7 @@ body {
   margin-top: 12px;
   vertical-align: middle;
   max-width: 100%;
+  width:100%;
 }
 
 .hero {

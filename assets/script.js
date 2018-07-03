@@ -45,6 +45,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
     });
     sr.reveal('.img', {
         duration: 500,
-        viewFactor: 0.5
+        viewFactor: 0.3
     });
 });
