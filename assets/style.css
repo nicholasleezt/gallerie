@@ -60,6 +60,8 @@ body {
   text-align: center;
   letter-spacing: 0.20em;
   user-select: none;
+  max-width: 300px;
+  margin: auto;
 }
 
 .links {
@@ -67,6 +69,58 @@ body {
   text-align: center;
   letter-spacing: 2em;
   padding: 1em;
+  vertical-align: middle;
+  display: flex;
+  justify-content: space-evenly;
+  max-width: 300px;
+  margin: auto;
+}
+
+.social {
+  height: 4rem;
+  width: 4rem;
+  transition: all 0.1s ease-in-out;
+}
+
+.social:hover,
+.social:active {
+  transform: scale(0.9);
+}
+
+.social>path {
+  fill: #f3f3f3;
+}
+
+.social.twitter:hover>path {
+  fill: #1DA1F2;
+}
+
+.social.instagram {
+  padding: 6px 0px;
+}
+
+.social.instagram>path {
+  fill: none;
+  stroke: #f3f3f3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2;
+}
+
+.social.instagram:hover>path {
+  stroke: #E7098B;
+}
+
+.social.flickr>path {
+  fill: #f3f3f3;
+}
+
+.social.flickr:hover>#fl1 {
+  fill: #0063dc;
+}
+
+.social.flickr:hover>#fl2 {
+  fill: #ff0084;
 }
 
 .overlay-container {
@@ -74,6 +128,7 @@ body {
   width: 100%;
   padding: 120px;
   visibility: hidden;
+  transition:all 0.4s ease-in-out;
 }
 
 .overlay {
@@ -87,18 +142,17 @@ body {
   transform: translateY(calc(-100% + 40px));
   justify-content: center;
   align-items: center;
-  transition: all 0.7s ease-in-out;
+  transition: all 0.45s ease-in-out;
 }
 
 .overlay.dropped {
   transform: translateY(0%);
-  transition: all 0.7s ease-in-out;
+  transition: all 0.45s ease-in-out;
 }
 
 .overlay.dropped>.dropdown {
   background: rgba(242, 242, 242, 0) url('icons/chevron-up.svg') no-repeat center;
   box-shadow: none;
-  transition: all 0.7s ease-in-out;
 }
 
 .overlay.dropped>.overlay-container {
@@ -202,12 +256,13 @@ body {
   .dropdown {
     padding: .75em;
   }
-  .follow {
-    font-size: 3.5em;
-  }
 }
 
 @media screen and (max-width: 600px) {
+  .social {
+    height: 3rem;
+    width: 3rem;
+  }
   .column {
     -ms-flex: 100%;
     flex: 100%;
@@ -226,12 +281,14 @@ body {
   }
   .follow {
     font-size: 3em;
+    padding: 0em;
   }
   .links {
     height: auto;
     text-align: center;
     letter-spacing: 0em;
     padding: 0em;
+    max-width: 220px;
   }
   .links>a>img {
     transform: scale(0.8);

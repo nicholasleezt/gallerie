@@ -1,1 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="4em" height="4em" viewBox="0 0 24 24" fill="none" stroke="#F3F3F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-instagram"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"></line></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22" width="22" height="22">
+	<style>
+		tspan { white-space:pre }
+		.shp0 { fill: none;stroke: #f3f3f3;stroke-linecap:round;stroke-linejoin:round;stroke-width: 2 } 
+	</style>
+	<path id="Layer" class="shp0" d="M1,6v10c0,2.77 2.23,5 5,5h10c2.77,0 5,-2.23 5,-5v-10c0,-2.77 -2.23,-5 -5,-5h-10c-2.77,0 -5,2.23 -5,5z" />
+	<path id="Layer" class="shp0" d="M15,10.37c0.25,1.71 -0.62,3.38 -2.16,4.16c-1.54,0.78 -3.41,0.48 -4.63,-0.74c-1.22,-1.22 -1.52,-3.09 -0.74,-4.63c0.78,-1.54 2.45,-2.41 4.16,-2.16c1.74,0.26 3.11,1.63 3.37,3.37z" />
+	<path id="Layer" class="shp0" d="M16.5,5.5v0" />
+</svg>
