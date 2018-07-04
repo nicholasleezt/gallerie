@@ -22,7 +22,7 @@ button::-moz-focus-inner { /*remove FireFox dotted outline*/
 }
 
 body {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Nunito Sans', sans-serif;
   font-size: 10px;
   line-height: 1.5;
   margin: 0;
@@ -64,7 +64,7 @@ body {
   text-align: center;
   letter-spacing: 0.20em;
   user-select: none;
-  max-width: 300px;
+  max-width: 310px;
   margin: auto;
 }
 
@@ -77,7 +77,7 @@ body {
   display: flex;
   justify-content: space-around; /*Edge*/
   justify-content: space-evenly;
-  max-width: 300px;
+  max-width: 400px;
   margin: auto;
 }
 
@@ -286,7 +286,7 @@ body {
     padding: 80px 60px
   }
   .follow {
-    font-size: 3em;
+    font-size: 2.5em;
     padding: 0em;
   }
   .links {
