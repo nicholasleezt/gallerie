@@ -3,11 +3,14 @@ html{box-sizing:border-box;margin:0}
 a{text-decoration:none}
 a:active{outline:0}
 button::-moz-focus-inner{border:0}
-body{font-family: 'Nunito Sans', sans-serif;font-size:10px;line-height:1.5;margin:0;color:#333}
+body{font-family:'Nunito Sans',sans-serif;font-size:10px;line-height:1.5;margin:0;color:#333}
 .container:after{content:" ";position:absolute;top:0;right:0;bottom:0;left:0;z-index:99}
-.dropdown{position:fixed;bottom:0;width:100%;margin:0;padding:1rem 0;background:#f2f2f2 url(icons/chevron-down.svg) no-repeat center;box-shadow:0 4px 4px rgba(0,0,0,.25);outline:0;border:0;display:flex;justify-content:center;align-items:center;z-index:4;cursor:pointer;height:40px;transition:all .7s ease-in-out}
-.follow{color:#f2f2f2;font-size:4em;text-align:center;letter-spacing:.2em;user-select:none;max-width:300px;margin:auto}
-.links{height:auto;text-align:center;letter-spacing:2em;padding:1em;vertical-align:middle;display:flex;justify-content:space-around;justify-content:space-evenly;max-width:300px;margin:auto}
+.dropdown{position:fixed;bottom:0;width:100%;margin:0;background:#f2f2f2;box-shadow:0 4px 4px rgba(0,0,0,.25);outline:0;border:0;display:flex;justify-content:center;align-items:center;z-index:4;cursor:pointer;height:40px;transition:all .2s ease-in-out}
+.chevron{width:24px;height:20px;fill:none;stroke:#333;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;transition:all .2s ease-out}
+.dropdown:hover>.chevron{stroke:#f2f2f2;transition:all .2s ease-in-out}
+.dropdown:hover{background:0 0;transition:all .2s ease-in-out}
+.follow{color:#f2f2f2;font-size:4em;text-align:center;letter-spacing:.2em;user-select:none;max-width:310px;margin:auto}
+.links{height:auto;text-align:center;letter-spacing:2em;padding:1em;vertical-align:middle;display:flex;justify-content:space-around;justify-content:space-evenly;max-width:400px;margin:auto}
 .social{height:4rem;width:4rem;transition:all .1s ease-in-out}
 .social:active,.social:hover{transform:scale(.9)}
 .social>path{fill:#f3f3f3}
@@ -21,7 +24,10 @@ body{font-family: 'Nunito Sans', sans-serif;font-size:10px;line-height:1.5;margi
 .overlay-container{justify-content:center;width:100%;padding:120px;visibility:hidden;transition:all .4s ease-in-out}
 .overlay{display:flex;z-index:3;position:fixed;background-color:rgba(0,0,0,.8);left:0;width:100%;height:100%;transform:translateY(calc(-100% + 40px));justify-content:center;align-items:center;transition:all .45s ease-in-out}
 .overlay.dropped{transform:translateY(0);transition:all .45s ease-in-out}
-.overlay.dropped>.dropdown{background:rgba(242,242,242,0) url(icons/chevron-up.svg) no-repeat center;box-shadow:none}
+.overlay.dropped>.dropdown{background:rgba(242,242,242,0);box-shadow:none}
+.overlay.dropped>.dropdown:hover{background:#f2f2f2}
+.overlay.dropped>.dropdown>.chevron{stroke:#f2f2f2;transform:rotateZ(180deg)}
+.overlay.dropped>.dropdown:hover>.chevron{stroke:#333;transition:all .2s ease-in-out}
 .overlay.dropped>.overlay-container{visibility:visible}
 .active{height:100%;overflow:hidden}
 .footer{display:flex;justify-content:center;position:fixed;bottom:0;width:100%;padding-top:40px;padding:1rem;background:#fff;z-index:2}
@@ -48,7 +54,7 @@ body{font-family: 'Nunito Sans', sans-serif;font-size:10px;line-height:1.5;margi
 .dropdown{padding:.6em}
 .container{padding:80px 60px}
 .overlay-container{padding:80px 60px}
-.follow{font-size:3em;padding:0}
+.follow{font-size:2.5em;padding:0}
 .links{height:auto;text-align:center;letter-spacing:0;padding:0;max-width:220px}
 .links>a>img{transform:scale(.8)}
 }
