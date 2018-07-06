@@ -1,6 +1,7 @@
 html {
   box-sizing: border-box;
   margin: 0;
+  height:100%;
 }
 
 *,
@@ -17,7 +18,8 @@ a:active {
   outline: none;
 }
 
-button::-moz-focus-inner { /*remove FireFox dotted outline*/
+button::-moz-focus-inner {
+  /*remove FireFox dotted outline*/
   border: 0;
 }
 
@@ -27,6 +29,7 @@ body {
   line-height: 1.5;
   margin: 0;
   color: #333;
+  height:100%;
 }
 
 .container:after {
@@ -57,25 +60,15 @@ body {
   transition: all 0.2s ease-in-out;
 }
 
-.chevron{
-  width:24px;
-  height:20px;
-  fill:none;
-  stroke:#333;
-  stroke-width:2;
-  stroke-linecap:round;
-  stroke-linejoin:round;
+.chevron {
+  width: 24px;
+  height: 20px;
+  fill: none;
+  stroke: #333;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
   transition: all 0.2s ease-out;
-}
-
-.dropdown:hover > .chevron{
-  stroke:#F2F2F2;
-  transition: all 0.2s ease-in-out;
-}
-
-.dropdown:hover{
-  background:transparent;
-  transition: all 0.2s ease-in-out;
 }
 
 .follow {
@@ -95,7 +88,8 @@ body {
   padding: 1em;
   vertical-align: middle;
   display: flex;
-  justify-content: space-around; /*Edge*/
+  justify-content: space-around;
+  /*Edge*/
   justify-content: space-evenly;
   max-width: 400px;
   margin: auto;
@@ -153,7 +147,7 @@ body {
   width: 100%;
   padding: 120px;
   visibility: hidden;
-  transition:all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
 }
 
 .overlay {
@@ -164,7 +158,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  transform: translateY(calc(-100% + 40px));  
+  transform: translateY(calc(-100% + 40px));
   justify-content: center;
   align-items: center;
   transition: all 0.45s ease-in-out;
@@ -175,32 +169,41 @@ body {
   transition: all 0.45s ease-in-out;
 }
 
-.overlay.dropped > .dropdown {
+.overlay.dropped>.dropdown {
   background: rgba(242, 242, 242, 0);
   box-shadow: none;
 }
 
-.overlay.dropped > .dropdown:hover {
+.overlay.dropped>.dropdown>.chevron {
+  stroke: #F2F2F2;
+  transform: rotateZ(180deg);
+}
+
+/*button hover effect
+
+.overlay>.dropdown:hover>.chevron {
+  stroke: #F2F2F2;
+  transition: all 0.2s ease-in-out;
+}
+
+.overlay>.dropdown:hover {
+  background: transparent;
+  transition: all 0.2s ease-in-out;
+}
+
+.overlay.dropped>.dropdown:hover {
   background: #F2F2F2;
 }
 
-.overlay.dropped > .dropdown > .chevron{
-  stroke: #F2F2F2;
-  transform:rotateZ(180deg);
-}
-
-.overlay.dropped > .dropdown:hover > .chevron{
+.overlay.dropped>.dropdown:hover>.chevron {
   stroke: #333;
   transition: all 0.2s ease-in-out;
 }
 
-.overlay.dropped > .overlay-container {
-  visibility: visible;
-}
+button hover effect*/
 
-.active {
-  height: 100%;
-  overflow: hidden;
+.overlay.dropped>.overlay-container {
+  visibility: visible;
 }
 
 .footer {
@@ -239,6 +242,7 @@ body {
   display: inherit;
   word-wrap: break-word;
   flex-wrap: wrap;
+  margin:auto;
 }
 
 .row>.column:last-child {
@@ -264,7 +268,7 @@ body {
   margin-top: 12px;
   vertical-align: middle;
   max-width: 100%;
-  width:100%;
+  width: 100%;
 }
 
 .hero {
