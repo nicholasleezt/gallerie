@@ -6,14 +6,10 @@ let toggleOverlay = (overlay) => {
     }
 }
 
-//let mobileHero = body => body.clientWidth < 768 ? document.querySelector(".hero").setAttribute('src','assets/photos/photo_7_md.jpg') : document.querySelector(".hero").setAttribute('src','assets/photos/photo_7_xl.jpg');
-
 document.addEventListener("DOMContentLoaded", function (event) {
     const body = document.querySelector("body");
     const overlay = document.querySelector(".overlay");
     const button = document.querySelector(".dropdown");
-
-    //mobileHero(body);
 
     button.addEventListener('click', (event) => {
         toggleOverlay(overlay);
