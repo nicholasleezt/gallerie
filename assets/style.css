@@ -54,6 +54,7 @@ h3 {
 
 .intro{
   color:#333;
+  padding-right:20px;
 }
 
 .dropdown {
@@ -178,6 +179,11 @@ h3 {
   transition: all 0.45s ease-in-out;
 }
 
+.overlay.hidden{
+  transform: translateY(-100%);
+  transition: all 0.2s ease-out;
+}
+
 .overlay.dropped {
   transform: translateY(0%);
   transition: all 0.45s ease-in-out;
@@ -220,7 +226,7 @@ button hover effect*/
   visibility: visible;
 }
 
-.footer {
+/* .footer {
   display: flex;
   justify-content: center;
   position: fixed;
@@ -230,7 +236,7 @@ button hover effect*/
   padding: 1rem;
   background: #fff;
   z-index: 2;
-}
+} */
 
 .signature {
   font-size: 1.8em;
@@ -276,9 +282,6 @@ button hover effect*/
 .img {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 3px;
-}
-
-.column img {
   margin-top: 12px;
   vertical-align: middle;
   max-width: 100%;
@@ -295,7 +298,7 @@ button hover effect*/
 
 /* MEDIA QUERIES */
 
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1024px) {
   .row>.column:nth-of-type(even) {
     padding-right: 0px;
   }
@@ -316,7 +319,7 @@ button hover effect*/
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
   .social {
     height: 3rem;
     width: 3rem;
@@ -328,6 +331,7 @@ button hover effect*/
     padding-left: 0px;
     padding-right: 0px;
   }
+
   .dropdown {
     padding: .6em;
   }
@@ -351,4 +355,13 @@ button hover effect*/
   .links>a>img {
     transform: scale(0.8);
   }
+}
+@media screen and (max-width: 768px) and (orientation:landscape){
+  .img{
+    max-height:80%;
+  }
+  .container {
+    padding: 80px 100px;
+  }
+
 }
