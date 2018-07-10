@@ -46,19 +46,7 @@ function hideNav(lastScrollTop, overlay, container) {
     return st;
 }
 
-const throttled = (delay, fn) => {
-    let lastCall = 0;
-    return function () {
-        const now = (new Date).getTime();
-        if (now - lastCall < delay) {
-            return;
-        }
-        lastCall = now;
-        return fn();
-    }
-}
-
-function throttle(delay, fn) {
+function throttled(delay, fn) {
     let lastCall = 0;
     return function (args) {
         const now = (new Date).getTime();
@@ -70,6 +58,19 @@ function throttle(delay, fn) {
     }
 }
 
+function debounced(delay, fn) {
+    let timerId;
+    return function (args) {
+      if (timerId) {
+        clearTimeout(timerId);
+      }
+      timerId = setTimeout(() => {
+        fn(args);
+        timerId = null;
+      }, delay);
+    }
+  }
+
 document.addEventListener("DOMContentLoaded", function (event) {
     const body = document.querySelector("body");
     const overlay = document.querySelector(".overlay");
@@ -80,14 +81,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
     getJSONData();
 
     const resizeEvent = (event) => sortPhotos();
-    const resizeHandler = throttled(400, resizeEvent);
+    const resizeHandler = debounced(300, resizeEvent);
     window.addEventListener("resize", resizeHandler);
 
     const scrollEvent = (event) => {
         let st = hideNav(lastScrollTop, overlay, container);
         lastScrollTop = st <= 0 ? 0 : st;
     };
-    const scrollHandler = throttle(400, scrollEvent);
+    const scrollHandler = throttled(400, scrollEvent);
     container.addEventListener("scroll", scrollHandler);
 
     button.addEventListener('click', (event) => {

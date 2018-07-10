@@ -14,7 +14,6 @@ function getJSONData() {
     $.getJSON(flickrURL, successFn);
 }
 function successFn(result) {
-    console.log(result);
     console.log("flickr request is a success");
     $.each(result.photos.photo, function (i, photo) {
         var originalSizeURL = "https://farm" +
