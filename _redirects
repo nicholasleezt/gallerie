@@ -1,0 +1,3 @@
+
+# redirect http to https
+http://dev-gallerie.netlify.com/* https://dev-gallerie.netlify.com/:splat 301!
