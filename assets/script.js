@@ -32,21 +32,21 @@ const sortPhotos = () => {
     }
 }
 
-function hideNav(lastScrollTop, overlay, container) {
-    var st = container.scrollTop;
-    if (st > lastScrollTop) {
-        if (overlay.classList.contains("hidden") == false) {
-            overlay.classList.add("hidden");
-        }
-    } else {
-        if (overlay.classList.contains("hidden")) {
-            overlay.classList.remove("hidden");
-        }
-    }
-    return st;
-}
+// let hideNav = (lastScrollTop, overlay, container) => {
+//     var st = container.scrollTop;
+//     if (st > lastScrollTop) {
+//         if (overlay.classList.contains("hidden") == false) {
+//             overlay.classList.add("hidden");
+//         }
+//     } else {
+//         if (overlay.classList.contains("hidden")) {
+//             overlay.classList.remove("hidden");
+//         }
+//     }
+//     return st;
+// }
 
-function throttled(delay, fn) {
+let throttled = (delay, fn) => {
     let lastCall = 0;
     return function (args) {
         const now = (new Date).getTime();
@@ -58,7 +58,7 @@ function throttled(delay, fn) {
     }
 }
 
-function debounced(delay, fn) {
+let debounced = (delay, fn) => {
     let timerId;
     return function (args) {
       if (timerId) {
@@ -71,7 +71,10 @@ function debounced(delay, fn) {
     }
   }
 
+  
+
 document.addEventListener("DOMContentLoaded", function (event) {
+    
     const body = document.querySelector("body");
     const overlay = document.querySelector(".overlay");
     const button = document.querySelector(".dropdown");
@@ -79,19 +82,20 @@ document.addEventListener("DOMContentLoaded", function (event) {
     let lastScrollTop = 0;
 
     getJSONData();
-
+    
     const resizeEvent = (event) => sortPhotos();
     const resizeHandler = debounced(300, resizeEvent);
     window.addEventListener("resize", resizeHandler);
 
-    const scrollEvent = (event) => {
-        let st = hideNav(lastScrollTop, overlay, container);
-        lastScrollTop = st <= 0 ? 0 : st;
-    };
-    const scrollHandler = throttled(400, scrollEvent);
-    container.addEventListener("scroll", scrollHandler);
+    // const scrollEvent = (event) => {
+    //     let st = hideNav(lastScrollTop, overlay, container);
+    //     lastScrollTop = st <= 0 ? 0 : st;
+    // };
+    // const scrollHandler = throttled(400, scrollEvent);
+    // container.addEventListener("scroll", scrollHandler);
 
     button.addEventListener('click', (event) => {
         toggleOverlay(overlay);
     });
 });
+

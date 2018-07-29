@@ -32,7 +32,7 @@ body {
   height:100%;
 }
 
-/* .container:after {
+ .container:after {
   content: " ";
   position: absolute;
   top: 0;
@@ -40,7 +40,7 @@ body {
   bottom: 0;
   left: 0;
   z-index: 99;
-} */
+} 
 
 h1{
   font-size:3em;
@@ -181,7 +181,7 @@ h3 {
 
 .overlay.hidden{
   transform: translateY(-100%);
-  transition: all 0.2s ease-out;
+  transition: all 0.1s ease-out;
 }
 
 .overlay.dropped {
@@ -251,7 +251,7 @@ button hover effect*/
   position: relative;
   overflow-x: hidden;
   font-size: 1.8em;
-  padding: 120px;
+  padding: 140px 180px;
   margin: 0 auto;
   height: 100%;
   z-index: 1;
@@ -309,7 +309,7 @@ button hover effect*/
     font-size: 1.4em;
   }
   .container {
-    padding: 100px 80px;
+    padding: 120px;
   }
   .overlay-container {
     padding: 100px 80px;
