@@ -1,2 +1,2 @@
 # gallerie
-it's the photography portfolio
+A photography portfolio developed in collaboration with a dear friend, [nicholaswzk](https://github.com/nicholaswzk).
