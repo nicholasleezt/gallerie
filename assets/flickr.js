@@ -59,6 +59,6 @@ function successFn(result) {
         }
     });
 
-    window.sr = ScrollReveal({ reset: true, container:".container", duration:600 });
-    sr.reveal('.img');
+    // window.sr = ScrollReveal({ reset: true, container:".container", duration:600 });
+    // sr.reveal('.img');
 }
